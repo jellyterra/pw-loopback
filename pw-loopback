@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+    echo "Usage: $0 (loopback name) (source name)"
+    echo "e.g.   $0 loopback Chromium"
+    exit
+fi
+
+pw-link $1:output_FL loopback:input_FL
+pw-link $1:output_FR loopback:input_FR
